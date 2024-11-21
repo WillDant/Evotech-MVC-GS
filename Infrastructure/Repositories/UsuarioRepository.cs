@@ -16,7 +16,7 @@ namespace ProjetoMvc.Infrastructure.Repositories
             _context = context;
         }
 
-        // Adicionar um novo usuário
+        // Adicionar um novo usuï¿½rio
         public async Task<Usuario> Adicionar(Usuario usuario)
         {
             _context.T_Usuario.Add(usuario);
@@ -24,26 +24,26 @@ namespace ProjetoMvc.Infrastructure.Repositories
             return usuario;
         }
 
-        // Listar todos os usuários
+        // Listar todos os usuï¿½rios
         public async Task<IEnumerable<Usuario>> ListarTodos()
         {
             return await _context.T_Usuario.ToListAsync();
         }
 
-        // Obter um usuário por ID
+        // Obter um usuï¿½rio por ID
         public async Task<Usuario> ObterPorId(int id)
         {
             return await _context.T_Usuario.FindAsync(id);
         }
 
-        // Editar um usuário existente
+        // Editar um usuï¿½rio existente
         public async Task<Usuario> Atualizar(Usuario usuario)
         {
             var usuarioExistente = await _context.T_Usuario.FindAsync(usuario.Id);
 
             if (usuarioExistente == null)
             {
-                return null; // Pode lançar uma exceção personalizada, dependendo da lógica do negócio
+                return null; // Pode lanï¿½ar uma exceï¿½ï¿½o personalizada, dependendo da lï¿½gica do negï¿½cio
             }
 
             _context.Entry(usuarioExistente).CurrentValues.SetValues(usuario);
@@ -52,7 +52,7 @@ namespace ProjetoMvc.Infrastructure.Repositories
             return usuarioExistente;
         }
 
-        // Remover um usuário pelo ID
+        // Remover um usuï¿½rio pelo ID
         public async Task<bool> Deletar(int id)
         {
             var usuario = await _context.T_Usuario.FindAsync(id);

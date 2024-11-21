@@ -14,32 +14,32 @@ namespace ProjetoMvc.Services
             _usuarioRepository = usuarioRepository;
         }
 
-        // Adicionar um novo usuário
+        // Adicionar um novo usuï¿½rio
         public async Task<Usuario> Adicionar(Usuario usuario)
         {
             return await _usuarioRepository.Adicionar(usuario);
         }
 
-        // Listar todos os usuários
+        // Listar todos os usuï¿½rios
         public async Task<IEnumerable<Usuario>> ListarTodos()
         {
             return await _usuarioRepository.ListarTodos();
         }
 
-        // Obter um usuário por ID
+        // Obter um usuï¿½rio por ID
         public async Task<Usuario> ObterPorId(int id)
         {
             return await _usuarioRepository.ObterPorId(id);
         }
 
-        // Atualizar um usuário existente
+        // Atualizar um usuï¿½rio existente
         public async Task<bool> Atualizar(Usuario usuario)
         {
             var usuarioExistente = await _usuarioRepository.ObterPorId(usuario.Id);
 
             if (usuarioExistente == null)
             {
-                return false; // Usuário não encontrado
+                return false; // Usuï¿½rio nï¿½o encontrado
             }
 
             // Atualiza os campos relevantes
@@ -52,7 +52,7 @@ namespace ProjetoMvc.Services
         }
 
 
-        // Deletar um usuário pelo ID
+        // Deletar um usuï¿½rio pelo ID
         public async Task<bool> Deletar(int id)
         {
             return await _usuarioRepository.Deletar(id);

@@ -8,16 +8,16 @@ namespace ProjetoMvc.Infrastructure.Interfaces
         Task<Usuario> Adicionar(Usuario usuario);
 
 
-        // Obtém todos os usuários
+        // Obtï¿½m todos os usuï¿½rios
         Task<IEnumerable<Usuario>> ListarTodos();
 
-        // Obtém um usuário por ID
+        // Obtï¿½m um usuï¿½rio por ID
         Task<Usuario> ObterPorId(int id);
 
-        // Atualiza um usuário existente
+        // Atualiza um usuï¿½rio existente
         Task<Usuario> Atualizar(Usuario usuario);
 
-        // Remove um usuário pelo ID
+        // Remove um usuï¿½rio pelo ID
         Task<bool> Deletar(int id);
     }
 }
