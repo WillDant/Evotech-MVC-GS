@@ -1,0 +1,23 @@
+﻿@model ProjetoMvc.Models.Usuario
+
+@{
+    ViewData["Title"] = "Excluir Usuário";
+}
+
+<section style="background-color: #f0f9f0; padding: 3rem; border-radius: 10px; max-width: 600px; margin: auto;">
+    <h1 class="text-center mb-4" style="color: #E57373; font-weight: bold; font-size: 2.5rem;">Excluir Usuário</h1>
+
+    <p class="text-center" style="font-size: 1.3rem; color: #555;">
+        Tem certeza de que deseja excluir o usuário <strong>@Model.Nome</strong> com o e-mail <strong>@Model.Email</strong>? <br />
+        Esta ação não pode ser desfeita.
+    </p>
+
+    <div class="d-flex justify-content-center mt-4">
+        <!-- Formulário para excluir diretamente -->
+        <form asp-action="Deletar" asp-route-id="@Model.Id" method="post">
+            <button type="submit" class="btn btn-lg" style="background-color: #E57373; color: #ffffff; font-size: 1.3rem; padding: 1rem 2rem; margin-right: 1rem;">Excluir</button>
+        </form>
+        <!-- Botão para cancelar e voltar -->
+        <a asp-action="Index" class="btn btn-lg" style="background-color: #81C784; color: #ffffff; font-size: 1.3rem; padding: 1rem 2rem;">Cancelar</a>
+    </div>
+</section>

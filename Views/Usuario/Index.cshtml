@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ProjetoMvc.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Lista de Usuários";
+}
+
+<section style="background-color: #f0f9f0; padding: 3rem; border-radius: 10px;">
+    <h1 class="text-center mb-4" style="color: #4CAF50; font-weight: bold; font-size: 2.5rem;">Lista de Usuários</h1>
+
+    <table class="table table-bordered table-hover mt-4" style="background-color: #ffffff; border: 2px solid #4CAF50; font-size: 1.2rem;">
+        <thead style="background-color: #4CAF50; color: #ffffff; font-size: 1.3rem;">
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th class="text-center">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var usuario in Model)
+                {
+                    <tr>
+                        <td>@usuario.Nome</td>
+                        <td>@usuario.Email</td>
+                        <td class="text-center">
+                            <a asp-action="Editar" asp-route-id="@usuario.Id" class="btn btn-md" style="background-color: #81C784; color: #ffffff; font-size: 1.1rem; padding: 0.6rem 1.2rem;">Editar</a>
+                            <a asp-action="Deletar" asp-route-id="@usuario.Id" class="btn btn-md" style="background-color: #E57373; color: #ffffff; font-size: 1.1rem; padding: 0.6rem 1.2rem;">Excluir</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3" class="text-center" style="color: #999; font-size: 1.3rem;">Nenhum usuário cadastrado.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="text-center mt-5">
+        <a asp-action="Criar" class="btn btn-lg" style="background-color: #4CAF50; color: #ffffff; font-size: 1.5rem; padding: 1rem 2.5rem; font-weight: bold;">Cadastrar Novo Usuário</a>
+    </div>
+</section>
+
+<section class="mt-5" style="background-color: #e8f5e9; padding: 2rem; border-radius: 10px;">
+    <h2 class="text-center" style="color: #388E3C; font-weight: bold; font-size: 2rem;">Conscientização sobre Energia Ecológica</h2>
+    <p class="mt-4" style="font-size: 1.3rem; line-height: 1.8; color: #555;">
+        O uso consciente da energia elétrica é essencial para preservar nosso planeta. Pequenas mudanças no cotidiano podem reduzir o impacto ambiental, como desligar aparelhos que não estão em uso, optar por lâmpadas de LED e monitorar o consumo energético dos dispositivos domésticos.
+    </p>
+    <p style="font-size: 1.3rem; line-height: 1.8; color: #555;">
+        Além de economizar energia, essas ações contribuem para reduzir a emissão de gases de efeito estufa, promovendo um futuro mais sustentável para as próximas gerações.
+    </p>
+    <div class="text-center mt-4">
+        <a href="#" class="btn btn-lg" style="background-color: #4CAF50; color: #ffffff; font-size: 1.5rem; padding: 1rem 2rem;">Saiba Mais</a>
+    </div>
+</section>

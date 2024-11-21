@@ -36,7 +36,7 @@ namespace ProjetoMvc.Infrastructure.Repositories
             return await _context.T_Usuario.FindAsync(id);
         }
 
-        // Atualizar um usuário existente
+        // Editar um usuário existente
         public async Task<Usuario> Atualizar(Usuario usuario)
         {
             var usuarioExistente = await _context.T_Usuario.FindAsync(usuario.Id);

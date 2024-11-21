@@ -1,0 +1,39 @@
+﻿@model ProjetoMvc.Models.Dispositivo
+
+@{
+    ViewData["Title"] = "Cadastro de Dispositivo";
+}
+
+<section class="d-flex align-items-center justify-content-center" style="min-height: 80vh; background-color: #f0f0f0;">
+    <!-- Formulário Centralizado -->
+    <div class="card shadow-lg border-0" style="max-width: 500px; width: 100%; background-color: #ffffff;">
+        <div class="card-header text-center" style="background-color: #3CB371; color: #fff; font-size: 1.5rem;">
+            <h2 class="mb-0">Cadastrar Dispositivo</h2>
+        </div>
+        <div class="card-body" style="padding: 2rem;">
+            <form asp-action="CriarDispositivo" method="post">
+                <div class="mb-4">
+                    <label asp-for="nm_dispositivo" class="form-label" style="font-size: 1.2rem;">Nome do Dispositivo</label>
+                    <input asp-for="nm_dispositivo" class="form-control form-control-lg" placeholder="Digite o nome do dispositivo" />
+                    <span asp-validation-for="nm_dispositivo" class="text-danger small"></span>
+                </div>
+                <div class="mb-4">
+                    <label asp-for="potencia" class="form-label" style="font-size: 1.2rem;">Potência (W)</label>
+                    <input asp-for="potencia" class="form-control form-control-lg" placeholder="Digite a potência em Watts" />
+                    <span asp-validation-for="potencia" class="text-danger small"></span>
+                </div>
+                <div class="d-flex justify-content-around mt-4">
+                    <button type="submit" class="btn" style="background-color: #5CB85C; color: #fff; font-size: 1.2rem; padding: 0.8rem 2rem;">Cadastrar</button>
+                    <a asp-action="ConsultarDispositivos" class="btn" style="background-color: #145812; color: #fff; font-size: 1.2rem; padding: 0.8rem 2rem;">Consultar</a>
+                    <a asp-controller="Home" asp-action="Index" class="btn" style="background-color: #2CB727; color: #fff; font-size: 1.2rem; padding: 0.8rem 2rem;">Voltar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
