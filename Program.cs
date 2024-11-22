@@ -14,6 +14,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseOracle
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<UsuarioService>();
 
+builder.Services.AddScoped<IDispositivoRepository, DispositivoRepository>();
+builder.Services.AddScoped<DispositivoService>();
+
 // Configuração do MVC e Swagger
 builder.Services.AddControllersWithViews();
 builder.Services.AddSwaggerGen();

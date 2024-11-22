@@ -7,29 +7,85 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ProjetoMvc.styles.css" asp-append-version="true" />
+    <style>
+        /* Ajustando o tamanho da navbar */
+        .navbar {
+            padding: 0.5rem 1rem; /* Navbar compacta */
+            background-color: #f8f9fa; /* Fundo claro */
+            border-bottom: 2px solid #4CAF50; /* Linha inferior */
+        }
+
+        /* Estilo da marca */
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4CAF50 !important;
+        }
+
+        /* Links da navbar */
+        .nav-link {
+            font-size: 1rem;
+            color: #4CAF50 !important;
+            transition: color 0.3s ease; /* Transição suave */
+        }
+
+            /* Hover nos links */
+            .nav-link:hover {
+                color: #388E3C !important; /* Verde mais escuro no hover */
+            }
+
+        /* Botão do menu responsivo */
+        .navbar-toggler {
+            border-color: #4CAF50; /* Cor da borda */
+        }
+
+        .navbar-toggler-icon {
+            background-color: #4CAF50; /* Ícone verde */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #e8f5e9; /* Verde claro */
+            padding: 1.5rem 0;
+        }
+
+            footer a {
+                color: #4CAF50;
+                text-decoration: none;
+            }
+
+                footer a:hover {
+                    color: #388E3C; /* Hover no link do footer */
+                }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">EvotechEnergy</a>
+                <!-- Brand -->
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    EvotechEnergy
+                </a>
+                <!-- Toggler -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <!-- Navbar Items -->
+                <div class="collapse navbar-collapse d-lg-flex justify-content-between">
+                    <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Dispositivo" asp-action="Criar">Cadastrar Dispositivo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Dispositivo" asp-action="Criar">Cadastro Dispositivo</a>
+                            <a class="nav-link" asp-area="" asp-controller="Dispositivo" asp-action="Index">Dispositivos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Criar">Cadastro Usuário</a>
+                            <a class="nav-link" asp-area="" asp-controller="Usuario" asp-action="Criar">Cadastrar Usuário</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Index">Usuários Cadastrados</a>
+                            <a class="nav-link" asp-area="" asp-controller="Usuario" asp-action="Index">Usuários</a>
                         </li>
                     </ul>
                 </div>
@@ -43,8 +99,8 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - ProjetoMvc - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="container text-center">
+            &copy; 2024 - Evotech
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

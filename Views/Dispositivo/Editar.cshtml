@@ -1,0 +1,27 @@
+﻿@model ProjetoMvc.Models.Dispositivo
+
+@{
+    ViewData["Title"] = "Editar Dispositivo";
+}
+
+<section style="background-color: #f0f9f0; padding: 3rem; border-radius: 10px; max-width: 600px; margin: auto;">
+    <h1 class="text-center mb-4" style="color: #4CAF50; font-weight: bold; font-size: 2.5rem;">Editar Dispositivo</h1>
+
+    <form asp-action="Editar" asp-route-id="@Model.id_dispositivo" method="post" style="font-size: 1.2rem;">
+        <input type="hidden" asp-for="id_dispositivo" />
+        <div class="mb-4">
+            <label asp-for="nm_dispositivo" class="form-label" style="font-weight: bold;">Nome do Dispositivo</label>
+            <input asp-for="nm_dispositivo" class="form-control form-control-lg" style="border: 2px solid #4CAF50;" placeholder="Digite o nome do dispositivo" />
+            <span asp-validation-for="nm_dispositivo" class="text-danger"></span>
+        </div>
+        <div class="mb-4">
+            <label asp-for="potencia" class="form-label" style="font-weight: bold;">Potência (W)</label>
+            <input asp-for="potencia" class="form-control form-control-lg" style="border: 2px solid #4CAF50;" placeholder="Digite a potência em watts" />
+            <span asp-validation-for="potencia" class="text-danger"></span>
+        </div>
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-lg" style="background-color: #4CAF50; color: #ffffff; padding: 0.8rem 2rem; font-weight: bold;">Salvar Alterações</button>
+            <a asp-action="Index" class="btn btn-lg" style="background-color: #E57373; color: #ffffff; padding: 0.8rem 2rem; font-weight: bold;">Cancelar</a>
+        </div>
+    </form>
+</section>
